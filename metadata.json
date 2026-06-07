@@ -1,0 +1,53 @@
+{
+  "app_name": "PET/CT-based pCR Prediction Calculator",
+  "model_name": "Random Forest",
+  "outcome": "Pathological complete response (pCR)",
+  "positive_class": "pCR",
+  "features": [
+    "SUV_ratio",
+    "SUVmax2",
+    "SUVmax1",
+    "Smoking",
+    "RECIST_response",
+    "Histological",
+    "cN"
+  ],
+  "continuous_features": [
+    "SUVmax1",
+    "SUVmax2",
+    "SUV_ratio"
+  ],
+  "categorical_features": {
+    "Smoking": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "RECIST_response": {
+      "Responder": "CR/PR",
+      "Non-responder": "SD/PD"
+    },
+    "Histological": {
+      "LUAD": "Lung adenocarcinoma",
+      "LUSC": "Lung squamous cell carcinoma"
+    },
+    "cN": {
+      "cN0-1": "cN0-1",
+      "cN2": "cN2"
+    }
+  },
+  "suv_ratio_formula": "(SUVmax1 - SUVmax2) / SUVmax1",
+  "threshold": 0.3983264342695861,
+  "performance": {
+    "training_auc": 0.943,
+    "bootstrap_oob_auc": 0.83,
+    "mean_bootstrap_oob_auc": 0.828,
+    "validation_auc": 0.874,
+    "validation_auc_ci95": [
+      0.766,
+      0.962
+    ],
+    "validation_brier_score": 0.141
+  },
+  "intended_use": "Research use only. Not for standalone clinical decision-making.",
+  "version": "1.0.0"
+}

@@ -1,0 +1,4 @@
+﻿SUVmax1,SUVmax2,SUV_ratio,Smoking,RECIST_response,Histological,cN
+16.1,4.8,0.701863,1,Responder,LUAD,cN2
+20.3,3.5,0.827586,0,Non-responder,LUSC,cN0-1
+14.8,7.4,0.500000,0,Responder,LUAD,cN2
