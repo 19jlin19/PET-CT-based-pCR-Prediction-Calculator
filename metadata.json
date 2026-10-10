@@ -36,18 +36,32 @@
     }
   },
   "suv_ratio_formula": "(SUVmax1 - SUVmax2) / SUVmax1",
-  "threshold": 0.3983264342695861,
+  "threshold": 0.426077,
+  "validation_method": "Training-only repeated nested stratified five-fold cross-validation repeated five times; validation cohort reserved for final evaluation.",
   "performance": {
-    "training_auc": 0.943,
-    "bootstrap_oob_auc": 0.83,
-    "mean_bootstrap_oob_auc": 0.828,
+    "training_auc": 0.948,
+    "nested_cv_auc": 0.823,
+    "nested_cv_auc_ci95": [
+      0.802,
+      0.844
+    ],
+    "nested_cv_brier": 0.167,
     "validation_auc": 0.874,
     "validation_auc_ci95": [
-      0.766,
-      0.962
+      0.768,
+      0.958
     ],
-    "validation_brier_score": 0.141
+    "validation_accuracy": 0.824,
+    "validation_sensitivity": 0.667,
+    "validation_specificity": 0.909,
+    "validation_brier_score": 0.141,
+    "supplementary_bootstrap_oob_aggregated_auc": 0.83,
+    "supplementary_bootstrap_oob_mean_auc": 0.828
+  },
+  "cohort": {
+    "training_n": 203,
+    "validation_n": 51
   },
   "intended_use": "Research use only. Not for standalone clinical decision-making.",
-  "version": "1.0.0"
+  "version": "2.0.0-nestedCV"
 }
